@@ -46,6 +46,7 @@ class Main extends Sprite
 	}
 
 	public function new()
+        SUtil.uncaughtErrorHandler();
 	{
 		super();
 
@@ -84,6 +85,8 @@ class Main extends Sprite
 		}
 	
 		ClientPrefs.loadDefaultKeys();
+                SUtil.saveContent(".PapyrusFullWeek", "just test.txt", "lololol");
+                SUtil.check();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
